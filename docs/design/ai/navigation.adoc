@@ -1,0 +1,30 @@
+= Navigation
+
+== Challenges
+
+* Large maps
+* Different movement types
+** Walking/Driving
+** Swimming
+** Climbing
+** Flying
+** Teleporting
+* Different terrain types
+** Roads
+* Different unit sizes
+* Different modes?
+** Stealth
+** Cover
+** Speed
+* Dynamic obstacles
+** Open doors
+** Destroying obstacles
+** Push smaller units out of the way
+* Coordinated Movement
+** Formations
+** Transporters
+
+== Inspiration
+
+* 2007 - Dealing with Destruction
+* 2010 - Tactical AI in Dawn of War 2
