@@ -1,0 +1,12 @@
+= Dialogue AI
+
+== Challenges
+
+* React to events & situation
+* Respond to each other
+* Inform the team members about status
+
+== Inspiration
+
+* 2015 - Combat Dialogue in FEAR
+* 2012 - AI-driven Dynamic Dialog through Fuzzy Pattern Matching
