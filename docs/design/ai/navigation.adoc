@@ -20,11 +20,32 @@
 ** Open doors
 ** Destroying obstacles
 ** Push smaller units out of the way
+* Jumping or climbing  over smaller obstacles
+** e.g desks, beds, fences, crates, ...
+** based on urgency?
 * Coordinated Movement
 ** Formations
 ** Transporters
+* Plan to multiple goals
 
 == Inspiration
 
 * 2007 - Dealing with Destruction
+** different unit sizes
+** destroyable terrain
+** some units can ignore smaller obstacles
+** cover points placed around obstacles
 * 2010 - Tactical AI in Dawn of War 2
+** Jumping, Teleporting, Burrowing
+** light & heavy crushers
+* Artificial Intelligence for Games
+** Jumping
+** Formations
+
+== Implementation
+
+.Overview
+[plantuml, class-diagram-navigation]
+....
+!include navigation.puml
+....

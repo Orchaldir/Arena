@@ -1,0 +1,40 @@
+@startuml
+
+hide empty members
+
+interface Graph {
+  List<Integer> getNeighbors(int index)
+  int calculateCost(CostCalculator, int from, int to)
+}
+interface CostCalculator {
+  int calculate(Node node)
+}
+interface HeuristicCalculator {
+  int calculate(int from, int to)
+}
+interface SearchAlgorithm
+class AStar
+class AStarNode {
+  int index
+  int costSoFar
+  AStarNode previous
+}
+class GridMap
+
+SearchAlgorithm <|-right- AStar
+SearchAlgorithm *-- Graph
+SearchAlgorithm *-- CostCalculator
+
+AStar *-- HeuristicCalculator
+
+AStar -- AStarNode
+
+Graph <|-- GridMap
+Graph "1" *-- "many" Node
+
+HeuristicCalculator <|-- ManhattanDistance
+
+CostCalculator <|-- TravelCostCalculator
+
+
+@enduml
