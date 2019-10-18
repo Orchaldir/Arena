@@ -2,24 +2,32 @@
 
 hide empty members
 
-interface Graph {
+interface Graph<T> {
+  T getNode(int index)
   List<Integer> getNeighbors(int index)
-  int calculateCost(CostCalculator, int from, int to)
+  int calculateCost(CostCalculator<T> c, int from, int to)
 }
-interface CostCalculator {
-  int calculate(Node node)
+interface CostCalculator<T> {
+  int calculate(T node)
 }
 interface HeuristicCalculator {
   int calculate(int from, int to)
 }
-interface SearchAlgorithm
+interface SearchAlgorithm {
+  Plan find(int start, int goal)
+}
 class AStar
 class AStarNode {
   int index
   int costSoFar
   AStarNode previous
 }
-class GridMap
+class GridMap<T>
+
+class Plan {
+  int totalCost
+  List<Integer> indices
+}
 
 SearchAlgorithm <|-right- AStar
 SearchAlgorithm *-- Graph
@@ -30,7 +38,8 @@ AStar *-- HeuristicCalculator
 AStar -- AStarNode
 
 Graph <|-- GridMap
-Graph "1" *-- "many" Node
+
+GridMap *-- T : nodes
 
 HeuristicCalculator <|-- ManhattanDistance
 

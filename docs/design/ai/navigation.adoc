@@ -42,6 +42,11 @@
 ** Jumping
 ** Formations
 
+== Ideas
+
+* Extract the finish condition from the search algorithm into its own interface
+** e.g. 1 or more goals
+
 == Implementation
 
 .Overview
