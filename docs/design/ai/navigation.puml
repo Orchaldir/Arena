@@ -4,8 +4,7 @@ hide empty members
 
 interface Graph<T> {
   T getNode(int index)
-  List<Integer> getNeighbors(int index)
-  int calculateCost(CostCalculator<T> c, int from, int to)
+  List<Neighbor<T>> getNeighbors(int index)
 }
 interface CostCalculator<T> {
   int calculate(T node)
@@ -22,28 +21,29 @@ class AStarNode {
   int costSoFar
   AStarNode previous
 }
-class GridMap<T>
 
 class Plan {
   int totalCost
   List<Integer> indices
 }
 
+class Neighbor<T> {
+  int index
+  T neighbor
+  int distance
+}
+
 SearchAlgorithm <|-right- AStar
 SearchAlgorithm *-- Graph
 SearchAlgorithm *-- CostCalculator
+SearchAlgorithm -left- Plan
 
 AStar *-- HeuristicCalculator
 
 AStar -- AStarNode
 
-Graph <|-- GridMap
-
-GridMap *-- T : nodes
-
-HeuristicCalculator <|-- ManhattanDistance
-
-CostCalculator <|-- TravelCostCalculator
+Graph *-- T : nodes
+Graph -- Neighbor
 
 
 @enduml

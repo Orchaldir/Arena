@@ -42,11 +42,6 @@
 ** Jumping
 ** Formations
 
-== Ideas
-
-* Extract the finish condition from the search algorithm into its own interface
-** e.g. 1 or more goals
-
 == Implementation
 
 .Overview
@@ -54,3 +49,12 @@
 ....
 !include navigation.puml
 ....
+
+=== Ideas
+
+* Extract the finish condition from the search algorithm into its own interface
+** e.g. 1 or more goals
+
+=== Open Points
+
+* How to visualize the visited nodes of a search algorithm?
