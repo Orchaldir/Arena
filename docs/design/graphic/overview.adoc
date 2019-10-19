@@ -1,0 +1,14 @@
+= Graphic
+
+== Challenges
+
+* Rendering multiple map layers in 2d
+* Render slices of 3d maps
+
+== Implementation
+
+.Overview
+[plantuml, class-diagram-overview]
+....
+!include overview.puml
+....

@@ -1,0 +1,45 @@
+@startuml
+
+hide empty members
+
+interface Graph<T>
+interface Map2d<T>
+class Map2dArray<T>
+class Map3d<T>
+class Map3dSlice<T>
+
+interface Renderer {
+  void renderRectangle()
+  void renderSphere()
+}
+class CanvasRenderer
+
+interface RenderTask {
+  void render()
+}
+class Map2dRenderTask<T>
+class Cell2dRenderTask<T>
+
+interface ColorSelector<T> {
+  Color select(T parameter)
+}
+
+Graph <|-- Map2d
+Graph <|-- Map3d
+
+Map2d <|-- Map2dArray
+Map2d <|-- Map3dSlice
+Map2d *-- Map2dRenderTask
+
+Map3d *-- Map3dSlice
+
+Renderer <|-- CanvasRenderer
+Renderer *-- RenderTask
+
+Map2dRenderTask *-- ColorSelector
+
+RenderTask <|-- Map2dRenderTask
+RenderTask <|-- Cell2dRenderTask
+
+
+@enduml
