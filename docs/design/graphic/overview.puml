@@ -19,6 +19,7 @@ interface RenderTask {
 }
 class Map2dRenderTask<T>
 class Cell2dRenderTask<T>
+class PathRenderTask
 
 interface ColorSelector<T> {
   Color select(T parameter)
@@ -40,6 +41,7 @@ Map2dRenderTask *-- ColorSelector
 
 RenderTask <|-- Map2dRenderTask
 RenderTask <|-- Cell2dRenderTask
+RenderTask <|-- PathRenderTask
 
 
 @enduml

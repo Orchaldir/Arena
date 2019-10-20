@@ -6,16 +6,21 @@ interface Graph<T> {
   T getNode(int index)
   List<Neighbor<T>> getNeighbors(int index)
 }
+
 interface CostCalculator<T> {
   int calculate(T node)
 }
+
 interface HeuristicCalculator {
   int calculate(int from, int to)
 }
-interface SearchAlgorithm {
-  Plan find(int start, int goal)
+
+interface SearchAlgorithm<T,N> {
+  Plan find(Graph<T> graph, int start, int goal)
 }
-class AStar
+
+class AStar<T,AStarNode>
+
 class AStarNode {
   int index
   int costSoFar

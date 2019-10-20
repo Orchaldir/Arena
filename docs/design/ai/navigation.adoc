@@ -27,6 +27,11 @@
 ** Formations
 ** Transporters
 * Plan to multiple goals
+* Outdated map knowledge
+** Units should not be instantly aware of map changes, which they can not see
+** If they discover a discrepancy
+*** Update their map knowledge
+*** Optionally act surprised
 
 == Inspiration
 
