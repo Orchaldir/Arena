@@ -2,6 +2,7 @@ package arena.util.map;
 
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayMap2d<T> implements Map2d<T> {
@@ -77,6 +78,27 @@ public class ArrayMap2d<T> implements Map2d<T> {
 
 	@Override
 	public List<Neighbor<T>> getNeighbors(int index) {
-		return null;
+		if(!isInside(index)) {
+			throw new OutsideMapException(index);
+		}
+
+		List<Neighbor<T>> neighbors = new ArrayList<>();
+
+		final int x = getX(index);
+		final int y = getY(index);
+
+		addNeighbor(neighbors, x + 1, y);
+		addNeighbor(neighbors, x, y + 1);
+		addNeighbor(neighbors, x - 1, y);
+		addNeighbor(neighbors, x, y - 1);
+
+		return neighbors;
+	}
+
+	private void addNeighbor(List<Neighbor<T>> neighbors, int x, int y) {
+		if(isInside(x, y)) {
+			int neighborIndex = getIndex(x, y);
+			neighbors.add(new Neighbor<>(neighborIndex, cells[neighborIndex], 1.0));
+		}
 	}
 }

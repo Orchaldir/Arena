@@ -3,9 +3,10 @@ package arena.util.map;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayMap2DTest extends SharedTestData {
@@ -195,6 +196,79 @@ public class ArrayMap2DTest extends SharedTestData {
 			assertThat(exception.getX(), is(equalTo(-1)));
 			assertThat(exception.getY(), is(equalTo(-1)));
 			assertThat(exception.getIndex(), is(equalTo(-3)));
+			assertTrue(exception.isUsedIndex());
+		}
+	}
+
+	@Nested
+	class TestGetNeighbors {
+
+		private void assertNeighbor(Neighbor<Integer> neighbor, int index, double distance) {
+			assertThat(neighbor.getIndex(), is(index));
+			assertThat(neighbor.getNeighbor(), is(ARRAY[index]));
+			assertThat(neighbor.getDistance(), is(closeTo(distance, 0.001)));
+		}
+
+		@Test
+		public void testGetNeighbors() {
+			List<Neighbor<Integer>> neighbors = MAP.getNeighbors(14);
+
+			assertThat(neighbors, hasSize(4));
+			assertNeighbor(neighbors.get(0), 15, 1.0);
+			assertNeighbor(neighbors.get(1), 18, 1.0);
+			assertNeighbor(neighbors.get(2), 13, 1.0);
+			assertNeighbor(neighbors.get(3), 10, 1.0);
+		}
+
+		@Test
+		public void testGetNeighborsAtMinX() {
+			List<Neighbor<Integer>> neighbors = MAP.getNeighbors(12);
+
+			assertThat(neighbors, hasSize(3));
+			assertNeighbor(neighbors.get(0), 13, 1.0);
+			assertNeighbor(neighbors.get(1), 16, 1.0);
+			assertNeighbor(neighbors.get(2), 8, 1.0);
+		}
+
+		@Test
+		public void testGetNeighborsAtMaxX() {
+			List<Neighbor<Integer>> neighbors = MAP.getNeighbors(15);
+
+			assertThat(neighbors, hasSize(3));
+			assertNeighbor(neighbors.get(0), 19, 1.0);
+			assertNeighbor(neighbors.get(1), 14, 1.0);
+			assertNeighbor(neighbors.get(2), 11, 1.0);
+		}
+
+		@Test
+		public void testGetNeighborsAtMinY() {
+			List<Neighbor<Integer>> neighbors = MAP.getNeighbors(2);
+
+			assertThat(neighbors, hasSize(3));
+			assertNeighbor(neighbors.get(0), 3, 1.0);
+			assertNeighbor(neighbors.get(1), 6, 1.0);
+			assertNeighbor(neighbors.get(2), 1, 1.0);
+		}
+
+		@Test
+		public void testGetNeighborsAtMaxY() {
+			List<Neighbor<Integer>> neighbors = MAP.getNeighbors(18);
+
+			assertThat(neighbors, hasSize(3));
+			assertNeighbor(neighbors.get(0), 19, 1.0);
+			assertNeighbor(neighbors.get(1), 17, 1.0);
+			assertNeighbor(neighbors.get(2), 14, 1.0);
+		}
+
+
+
+		@Test
+		public void testGetNeighborsWithIndexIsOutside() {
+			OutsideMapException exception = assertThrows(OutsideMapException.class, () -> MAP.getNeighbors(-8));
+
+			assertThat(exception.getX(), is(equalTo(-1)));
+			assertThat(exception.getY(), is(equalTo(-1)));
+			assertThat(exception.getIndex(), is(equalTo(-8)));
 			assertTrue(exception.isUsedIndex());
 		}
 	}

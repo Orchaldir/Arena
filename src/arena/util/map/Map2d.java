@@ -1,5 +1,7 @@
 package arena.util.map;
 
+import java.util.List;
+
 public interface Map2d<T> extends Graph<T> {
 
 	int getWidth();

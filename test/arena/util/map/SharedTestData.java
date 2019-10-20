@@ -13,16 +13,17 @@ public class SharedTestData {
 	public static final int X2 = 0, Y2 = 3, INDEX2 = 12;
 	public static final int X3 = 2, Y3 = 1, INDEX3 = 6;
 
+	public static final Integer[] ARRAY;
 	public static final Map2d<Integer> MAP;
 
 	static
 	{
-		Integer[] array = new Integer[SIZE];
+		ARRAY = new Integer[SIZE];
 
 		for(int i = 0; i < SIZE; i++) {
-			array[i] = i;
+			ARRAY[i] = i;
 		}
 
-		MAP = new ArrayMap2d<>(WIDTH, HEIGHT, array);
+		MAP = new ArrayMap2d<>(WIDTH, HEIGHT, ARRAY);
 	}
 }
