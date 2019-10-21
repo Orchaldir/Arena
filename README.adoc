@@ -1,3 +1,5 @@
 = Arena
 
+image:https://travis-ci.org/Orchaldir/Arena.svg?branch=master["Build Status", link="https://travis-ci.org/Orchaldir/Arena"]
+
 A simple 2d rpg that focuses on combat AI.
