@@ -1,0 +1,28 @@
+= Dialogue AI
+
+== Challenges
+
+* Sight
+** different Field of View algorithms
+** lighting
+** tracks
+*** in mud or snow
+*** mud or blood on the floor
+*** burned or melted  into the floor
+* Hearing
+** sound spreads & is blocked
+** how to visualize its origin?
+* Smell
+** how to show what the character smells?
+** how to handle very sensitive noses like bloodhounds?
+* Detect traps
+* Special senses
+** Sense X in radius
+** thermal vision
+
+== Inspiration
+
+* Cogmind
+** special senses
+** visualize sound sources
+* Sneaking Behind Thief’s AI

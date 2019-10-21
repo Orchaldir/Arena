@@ -1,0 +1,34 @@
+= Map
+
+== Challenges
+
+* Explosions
+* Fluids
+** e.g. water, magma
+** Flow
+** Pressure
+* Gasses
+** fog, smoke
+* Lighting
+* Projectiles
+** accuracy
+** wind
+* Rigid body dynamics
+* Temperature
+** fire
+** steam <--> water <--> ice
+
+== Inspiration
+
+* 2010 - Heat Transfer Simulation for Modeling Realistic Winter Sceneries
+* Cogmind
+** explosions, smoke, projectiles
+* Dwarf Fortress
+** Fluid simulation
+*** Magma: flows down & spreads to the side
+*** Water: magma + water pressure
+** Fire
+*** Magma ignites anything flammable
+*** Creatures made of fire or magma
+*** Dragon fire ignites or melts many fire-safe materials
+
