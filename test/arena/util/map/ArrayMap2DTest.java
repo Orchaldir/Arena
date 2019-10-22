@@ -205,7 +205,7 @@ public class ArrayMap2DTest extends SharedTestData {
 
 		private void assertNeighbor(Neighbor<Integer> neighbor, int index, double distance) {
 			assertThat(neighbor.getIndex(), is(index));
-			assertThat(neighbor.getNeighbor(), is(ARRAY[index]));
+			assertThat(neighbor.getNode(), is(ARRAY[index]));
 			assertThat(neighbor.getDistance(), is(closeTo(distance, 0.001)));
 		}
 
