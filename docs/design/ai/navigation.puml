@@ -5,14 +5,11 @@ hide empty members
 interface Graph<T> {
   T getNode(int index)
   List<Neighbor<T>> getNeighbors(int index)
+  double getDistance(int from, int to)
 }
 
 interface CostCalculator<T> {
-  int calculate(T node)
-}
-
-interface HeuristicCalculator {
-  int calculate(int from, int to)
+  double calculate(T node)
 }
 
 interface SearchAlgorithm<T,N> {
@@ -23,27 +20,26 @@ class AStar<T,AStarNode>
 
 class AStarNode {
   int index
-  int costSoFar
+  double costSoFar
   AStarNode previous
 }
 
 class Plan {
-  int totalCost
+  double totalCost
   List<Integer> indices
 }
 
 class Neighbor<T> {
   int index
   T neighbor
-  int distance
+  double distance
 }
 
 SearchAlgorithm <|-right- AStar
 SearchAlgorithm *-- Graph
-SearchAlgorithm *-- CostCalculator
 SearchAlgorithm -left- Plan
 
-AStar *-- HeuristicCalculator
+AStar *-- CostCalculator
 
 AStar -- AStarNode
 

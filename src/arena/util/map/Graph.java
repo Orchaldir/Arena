@@ -10,4 +10,6 @@ public interface Graph<T> {
 
 	List<Neighbor<T>> getNeighbors(int index);
 
+	double getDistance(int from, int to);
+
 }

@@ -101,4 +101,15 @@ public class ArrayMap2d<T> implements Map2d<T> {
 			neighbors.add(new Neighbor<>(neighborIndex, cells[neighborIndex], 1.0));
 		}
 	}
+
+	@Override
+	public double getDistance(int from, int to) {
+		int  fromX = getX(from);
+		int  fromY = getY(from);
+		int  toX = getX(to);
+		int  toY = getY(to);
+
+		// use Manhattan distance
+		return Math.abs(toX - fromX) + Math.abs(toY - fromY);
+	}
 }

@@ -260,8 +260,6 @@ public class ArrayMap2DTest extends SharedTestData {
 			assertNeighbor(neighbors.get(2), 14, 1.0);
 		}
 
-
-
 		@Test
 		public void testGetNeighborsWithIndexIsOutside() {
 			OutsideMapException exception = assertThrows(OutsideMapException.class, () -> MAP.getNeighbors(-8));
@@ -270,6 +268,26 @@ public class ArrayMap2DTest extends SharedTestData {
 			assertThat(exception.getY(), is(equalTo(-1)));
 			assertThat(exception.getIndex(), is(equalTo(-8)));
 			assertTrue(exception.isUsedIndex());
+		}
+	}
+
+	@Nested
+	class TestGetDistance {
+
+		@Test
+		public void testNeighbors() {
+			assertThat(MAP.getDistance(14, 15), is(equalTo(1.0)));
+			assertThat(MAP.getDistance(14, 18), is(equalTo(1.0)));
+			assertThat(MAP.getDistance(14, 13), is(equalTo(1.0)));
+			assertThat(MAP.getDistance(14, 10), is(equalTo(1.0)));
+		}
+
+		@Test
+		public void testDiagonals() {
+			assertThat(MAP.getDistance(14, 19), is(equalTo(2.0)));
+			assertThat(MAP.getDistance(14, 17), is(equalTo(2.0)));
+			assertThat(MAP.getDistance(14,  9), is(equalTo(2.0)));
+			assertThat(MAP.getDistance(14, 11), is(equalTo(2.0)));
 		}
 	}
 }
