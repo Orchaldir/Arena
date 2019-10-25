@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" hgap="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="arena.app.demo.pathfinding.PathfindingController">
+   <columnConstraints>
+      <ColumnConstraints/>
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints/>
+      <RowConstraints/>
+   </rowConstraints>
+   <Canvas fx:id="mapCanvas" height="600.0" onMouseClicked="#onMouseClicked" width="1000.0"
+           BorderPane.alignment="TOP_LEFT"/>
+</GridPane>
