@@ -1,5 +1,8 @@
 = Arena
 
 image:https://travis-ci.org/Orchaldir/Arena.svg?branch=master["Build Status", link="https://travis-ci.org/Orchaldir/Arena"]
+image:https://sonarcloud.io/api/project_badges/measure?project=groupId%3AArena&metric=coverage[SonarCloud Coverage,link=https://sonarcloud.io/dashboard?id=groupId%3AArena]
+image:https://sonarcloud.io/api/project_badges/measure?project=groupId%3AArena&metric=bugs[SonarCloud Bugs,link=https://sonarcloud.io/dashboard?id=groupId%3AArena]
+image:https://sonarcloud.io/api/project_badges/measure?project=groupId%3AArena&metric=code_smells[SonarCloud Code Smells,link=https://sonarcloud.io/dashboard?id=groupId%3AArena]
 
 A simple 2d rpg that focuses on combat AI.
