@@ -13,6 +13,7 @@
         <java.version>1.9</java.version>
         <maven.compiler.source>1.9</maven.compiler.source>
         <maven.compiler.target>1.9</maven.compiler.target>
+        <sonar.coverage.exclusions>src/arena/app/**/*</sonar.coverage.exclusions>
     </properties>
 
     <dependencies>
@@ -89,6 +90,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- needed for code coverage with sonar cloud -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
