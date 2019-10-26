@@ -2,11 +2,11 @@
 
 hide empty members
 
-interface Graph<T>
+interface Tile {
+  void render(Renderer renderer)
+}
+
 interface Map2d<T>
-class Map2dArray<T>
-class Map3d<T>
-class Map3dSlice<T>
 
 interface Renderer {
   void renderRectangle()
@@ -18,30 +18,27 @@ interface RenderTask {
   void render()
 }
 class Map2dRenderTask<T>
-class Cell2dRenderTask<T>
 class PathRenderTask
 
-interface ColorSelector<T> {
-  Color select(T parameter)
+interface TileSelector<T> {
+  Tile select(T parameter)
 }
 
-Graph <|-- Map2d
-Graph <|-- Map3d
+Tile <|-- RectangleTile
+Tile <|-- SphereTile
+Tile <|-- ImageTile
 
-Map2d <|-- Map2dArray
-Map2d <|-- Map3dSlice
-Map2d *-- Map2dRenderTask
-
-Map3d *-- Map3dSlice
-
-Renderer <|-- CanvasRenderer
+Renderer <|-left- CanvasRenderer
 Renderer *-- RenderTask
 
-Map2dRenderTask *-- ColorSelector
+Map2dRenderTask *-- Map2d
+Map2dRenderTask *-- TileSelector
+
+PathRenderTask *-- Tile
+
+TileSelector -- Tile
 
 RenderTask <|-- Map2dRenderTask
-RenderTask <|-- Cell2dRenderTask
 RenderTask <|-- PathRenderTask
-
 
 @enduml
