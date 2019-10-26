@@ -32,7 +32,7 @@ public class CanvasRenderer implements Renderer {
 	}
 
 	@Override
-	public void renderSphere(double x, double y, double radius) {
+	public void renderCircle(double x, double y, double radius) {
 		double size = radius * 2.0;
 		graphicsContext.fillOval(x - radius, y - radius, size, size);
 	}

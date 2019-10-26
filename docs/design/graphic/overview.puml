@@ -10,7 +10,7 @@ class Map3dSlice<T>
 
 interface Renderer {
   void renderRectangle()
-  void renderSphere()
+  void renderCircle()
 }
 class CanvasRenderer
 

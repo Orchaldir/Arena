@@ -41,7 +41,7 @@ public class PathfindingController {
 		log.info("render()");
 
 		canvasRenderer.setColor(Color.RED);
-		canvasRenderer.renderSphere(100, 200, 50);
+		canvasRenderer.renderCircle(100, 200, 50);
 	}
 
 

@@ -12,5 +12,5 @@ public interface Renderer {
 
 	void renderRectangle(double x, double y, double width, double height);
 
-	void renderSphere(double x, double y, double size);
+	void renderCircle(double x, double y, double size);
 }
